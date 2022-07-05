@@ -8,4 +8,15 @@
 
 int _printf(const char *format, ...);
 
-#endif // MAIN_H
+int print_char(va_list list);
+int print_string(va_list list);
+int print_percent(va_list list);
+
+typedef struct format
+{
+	char let;
+	int (*func)(va_list list);
+
+} format_t;
+
+#endif
