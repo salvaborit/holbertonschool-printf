@@ -8,7 +8,7 @@
 */
 int _printf(const char *format, ...)
 {
-	va_list ap;
+	va_list list;
 	unsigned int i, j;
 
 	format_t f[] = {
@@ -18,24 +18,27 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
-	va_start(ap, format);
-	for (i = 0; format[i];)
+	va_start(list, format);
+	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			j = 0;
 			while (f[j].let)
 			{
-				if (f[j].let == format[i + 1])
+				if (f[j].let[0] == format[i + 1])
 				{
-					_putchar(j);
-					f[j].func(ap);
+					f[j].func(list);
+					i++;
 				}
 				j++;
 			}
 		}
-		i++;
+		else
+		{
+			_putchar(format[i]);
+		}
 	}
-	va_end(ap);
+	va_end(list);
 	return (0);
 }
