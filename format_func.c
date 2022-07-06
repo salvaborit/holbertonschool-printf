@@ -30,13 +30,3 @@ int print_string(va_list list)
 			_putchar(str[i]);
 	return (i);
 }
-/**
- * print_percent - Function.
- * @list: Element of type va_list.
- * Return: Result the va_list.
- */
-int print_percent(va_list __attribute__ ((unused)) list)
-{
-	_putchar('%');
-	return (1);
-}

@@ -20,7 +20,13 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && (format[i + 1] == 0 || format[i + 1] == '%'))
+		{
+			_putchar('%');
+			i += 2;
+			charCount++;
+		}
+		else if (format[i] == '%')
 		{
 			j = 0;
 			while (j < 2)
