@@ -26,9 +26,13 @@ int _printf(const char *format, ...)
 			j = 0;
 			while (f[j].let)
 			{
-				if (f[j].let == format[i + 1])
+				if (f[j].let)
 				{
+					if (format[i + 1])
+					{
+					_putchar(j);
 					f[j].func(ap);
+					}
 				}
 				j++;
 			}
