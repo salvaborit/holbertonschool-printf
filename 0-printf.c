@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	unsigned int i, j, charCount = 0;
+	int i, j, charCount = 0;
 	format_t f[] = {
 		{"c", print_char},
 		{"s", print_string}
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && (format[i + 1] == 0 || format[i + 1] == '%'))
 		{
 			_putchar('%');
-			i += 2;
+			i ++;
 			charCount++;
 		}
 		else if (format[i] == '%')
@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				if (*f[j].let == format[i + 1])
 				{
 					charCount += f[j].f(list);
-					i += 2;
+					i++;
 				}
 				j++;
 			}
