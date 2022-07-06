@@ -24,9 +24,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			j = 0;
-			while (f[j].let)
+			while (f[j].let && format[i + 1])
 			{
-				if (f[j].let[0] == format[i + 1] && format[i + 1])
+				if (f[j].let[0] == format[i + 1])
 				{
 					charCount += f[j].func(list);
 					i++;
