@@ -28,6 +28,5 @@ int print_string(va_list list)
 	else
 		for (i = 0; str[i]; i++)
 			_putchar(str[i]);
-	i--;
 	return (i);
 }
