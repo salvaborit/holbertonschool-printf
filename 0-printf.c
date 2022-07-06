@@ -23,10 +23,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-		if (format[i + 1] == '%')
+		while (f[j].let)
 		{
 		j = 0;
-			if (f[j].let[0])
+			if (f[j].let[0] == format[i + 1])
 			{
 				charCount += f[j].func(list);
 				i++;
