@@ -12,8 +12,7 @@ int _printf(const char *format, ...)
 	unsigned int i, j, charCount = 0;
 	format_t f[] = {
 		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent}
+		{"s", print_string}
 	};
 
 	if (!format)
@@ -24,11 +23,11 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			j = 0;
-			while (f[j].let && format[i + 1])
+			while (j < 2)
 			{
-				if (f[j].let[0] == format[i + 1])
+				if (*f[j].let == format[i + 1])
 				{
-					charCount += f[j].func(list);
+					charCount += f[j].f(list);
 					i += 2;
 				}
 				j++;
