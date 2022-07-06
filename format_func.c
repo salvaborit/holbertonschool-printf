@@ -16,12 +16,18 @@ int print_char(va_list list)
  */
 int print_string(va_list list)
 {
-	char *str;
+	char *str, null[] = "(null)";
 	int i;
 
 	str = va_arg(list, char *);
-	for (i = 0; str[i]; i++)
-		_putchar(str[i]);
+	if (str == NULL)
+	{
+		for (i = 0; null[i]; i++)
+			_putchar(null[i]);
+	}
+	else
+		for (i = 0; str[i]; i++)
+			_putchar(str[i]);
 	return (i);
 }
 /**
