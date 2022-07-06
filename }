@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		{"s", print_string}
 	};
 
-	if (!format || !strcmp(format, "%"))
+	if (!format || strcmp(format, "%"))
 		return (-1);
 	va_start(list, format);
 	for (i = 0; format[i]; i++)
