@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	unsigned int i, j;
+	unsigned int i, j, charCount = 0;
 
 	format_t f[] = {
 		{"c", print_char},
@@ -17,8 +17,6 @@ int _printf(const char *format, ...)
 		{"%", print_percent},
 		{NULL, NULL}
 	};
-	if (format == NULL)
-		return (0);
 	va_start(list, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -29,7 +27,7 @@ int _printf(const char *format, ...)
 			{
 				if (f[j].let[0] == format[i + 1])
 				{
-					f[j].func(list);
+					charCount += f[j].func(list);
 					i++;
 				}
 				j++;
@@ -37,9 +35,10 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			charCount += 1;
 			_putchar(format[i]);
 		}
 	}
 	va_end(list);
-	return (i++);
+	return (charCount);
 }

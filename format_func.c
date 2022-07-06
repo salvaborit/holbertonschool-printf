@@ -7,7 +7,7 @@
 int print_char(va_list list)
 {
 	_putchar(va_arg(list, int));
-	return (0);
+	return (1);
 }
 /**
  * print_string - Function.
@@ -22,7 +22,7 @@ int print_string(va_list list)
 	str = va_arg(list, char *);
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
-	return (0);
+	return (i);
 }
 /**
  * print_percent - Function.
@@ -32,5 +32,5 @@ int print_string(va_list list)
 int print_percent(va_list __attribute__ ((unused)) list)
 {
 	_putchar('%');
-	return (0);
+	return (1);
 }
