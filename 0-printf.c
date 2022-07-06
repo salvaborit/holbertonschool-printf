@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 				if (f[j].let[0] == format[i + 1])
 				{
 					charCount += f[j].func(list);
-					i++;
+					i += 2;
 				}
 				j++;
 			}
