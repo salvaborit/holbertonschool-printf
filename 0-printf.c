@@ -10,12 +10,14 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	unsigned int i, j, charCount = 0;
-
 	format_t f[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent}
 	};
+
+	if (!format)
+		return (0);
 	va_start(list, format);
 	for (i = 0; format[i]; i++)
 	{
