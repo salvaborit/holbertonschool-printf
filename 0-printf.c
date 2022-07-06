@@ -17,7 +17,8 @@ int _printf(const char *format, ...)
 		{"%", print_percent},
 		{NULL, NULL}
 	};
-
+	if (format == NULL)
+		return (0);
 	va_start(list, format);
 	for (i = 0; format[i]; i++)
 	{
