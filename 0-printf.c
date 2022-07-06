@@ -29,8 +29,8 @@ int _printf(const char *format, ...)
 				if (f[j].let[0] == format[i + 1])
 				{
 					f[j].func(list);
+					i++;
 				}
-				i++;
 				j++;
 			}
 		}
@@ -40,5 +40,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(list);
-	return (0);
+	return (i++);
 }
