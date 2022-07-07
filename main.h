@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
-#include <math.h>
 
 /**
 * struct format - structure that maps format specifier to func
@@ -23,7 +22,8 @@ int percent_case(va_list list, char c);
 
 int print_char(va_list list);
 int print_str(va_list list);
-
 int print_dec(va_list list);
-int print_int(va_list list);
+
+int _pow(int x, int y);
+
 #endif

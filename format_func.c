@@ -49,8 +49,24 @@ int print_dec(va_list list)
 	for (d = 0, x = 1; d < intLen; d++, x++)
 	{
 		m = n;
-		z = pow(10, intLen - x);
+		z = _pow(10, intLen - x);
 		putchar((m / z) % 10);
 	}
 	return (intLen);
+}
+/**
+* 
+*
+*/
+int _pow(int x, int y)
+{
+	if (y < 0)
+		return (-1);
+	else if (x == 0)
+		return (0);
+	else if (x == 1)
+		return (1);
+	else if (y > 0)
+		return (x * _pow(x, y - 1));
+	return (1);
 }
