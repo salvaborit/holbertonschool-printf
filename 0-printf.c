@@ -9,11 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i, j, charCount = 0;
-	format_t f[] = {
-		{"c", print_char},
-		{"s", print_string}
-	};
+	int i, charCount = 0;
 
 	if (!format || !strcmp(format, "%"))
 		return (-1);
@@ -28,16 +24,8 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
-			j = 0;
-			while (j < 2)
-			{
-				if (*f[j].let == format[i + 1])
-				{
-					charCount += f[j].f(list);
-					i++;
-				}
-				j++;
-			}
+			charCount += percent_case(list, format[i + 1]);
+			i++;
 		}
 		else
 		{
@@ -47,4 +35,25 @@ int _printf(const char *format, ...)
 	}
 	va_end(list);
 	return (charCount);
+}
+int percent_case(va_list list, char c)
+{
+	int j;
+	format_t f[] = {
+		{"c", print_char},
+		{"s", print_str}
+	};
+	
+	j = 0;
+	while (j < 2)
+	{
+		if (*f[j].let == c)
+		{
+			return (f[j].f(list));
+		}
+		j++;
+	}
+	_putchar('%');
+	_putchar(c);
+	return (2);
 }

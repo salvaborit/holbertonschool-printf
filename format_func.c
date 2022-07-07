@@ -14,7 +14,7 @@ int print_char(va_list list)
  * @list: Element of type va_list.
  * Return: Result the va_list.
  */
-int print_string(va_list list)
+int print_str(va_list list)
 {
 	char *str, null[] = "(null)";
 	int i;
