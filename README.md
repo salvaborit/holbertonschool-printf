@@ -4,7 +4,7 @@ Printf is a special function, the first argument it receives is fixed and is the
 This printf calls as many parameters as the number of marks included in the format string, plus one that is the format string itself.
 
 # For example
-#include "main.h"
+##### #include "main.h"
 _printf("I get up every day at %d in the morning and go to %s"., 6, "work");
 
 Print this:
