@@ -7,7 +7,7 @@
 #include <string.h>
 
 /**
-* struct format_t - structure that maps format specifier to func
+* struct format - structure that maps format specifier to func
 * @let: format specifier
 * @f: function to be called
 */
