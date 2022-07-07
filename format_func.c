@@ -39,9 +39,9 @@ int print_dec(va_list list)
 {
 	int i, n;
 	n = va_arg(list, int);
-	putchar(n);
 	for (i = 0; n != 0; i++)
 		n /= 10;
+	putchar(n);
 	return (i);
 }
 /**
