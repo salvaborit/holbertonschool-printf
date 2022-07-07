@@ -36,6 +36,12 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (charCount);
 }
+/**
+ * percent_case - Function.
+ * @list: Element of type va_list.
+ * @c: Element of type char.
+ * Return: 2.
+ */
 int percent_case(va_list list, char c)
 {
 	int j;
@@ -43,7 +49,6 @@ int percent_case(va_list list, char c)
 		{"c", print_char},
 		{"s", print_str}
 	};
-	
 	j = 0;
 	while (j < 2)
 	{
