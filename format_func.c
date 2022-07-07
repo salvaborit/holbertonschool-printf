@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * print_char - Function.
- * @list: Element of type va_list.
- * Return: Result the va_list.
+ * print_char - prints chars
+ * @list: va_list that holds arguments from main func
+ * Return: number of chars printed
  */
 int print_char(va_list list)
 {
@@ -10,9 +10,9 @@ int print_char(va_list list)
 	return (1);
 }
 /**
- * print_str - Function.
- * @list: Element of type va_list.
- * Return: Result the va_list.
+ * print_str - prints strings
+ * @list: va_list that holds arguments from main func
+ * Return: number of chars printed
  */
 int print_str(va_list list)
 {
@@ -31,15 +31,22 @@ int print_str(va_list list)
 	return (i);
 }
 /**
- * print_decimal - Function.
- * @list: Element of type va_list.
- * Return: Result the va_list.
- * int print_decimal(va_list list)
- * {
- * return (0);
- * }
- * int print_integer(va_list list)
- * {
- * return (0);
- * }
+* print_dec - prints ints
+* @list: va_list that holds arguments from main func
+* Return: number of ints printed
+*/
+int print_dec(va_list list)
+{
+	int i, n;
+	n = va_arg(list, int);
+	putchar(n);
+	for (i = 0; n != 0; i++)
+		n /= 10;
+	return (i);
+}
+/**
+int print_integer(va_list list)
+{
+return (0);
+}
 */

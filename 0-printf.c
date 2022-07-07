@@ -39,18 +39,20 @@ int _printf(const char *format, ...)
 /**
  * percent_case - Function.
  * @list: Element of type va_list.
- * @c: Element of type char.
- * Return: 2.
+ * @c: char (format[i + 1])
+ * Return: 2 (number of chars printed)
  */
 int percent_case(va_list list, char c)
 {
 	int j;
 	format_t f[] = {
 		{"c", print_char},
-		{"s", print_str}
+		{"s", print_str},
+		{"d", print_dec},
+		{"i", print_dec}
 	};
 	j = 0;
-	while (j < 2)
+	while (j < 4)
 	{
 		if (*f[j].let == c)
 		{
