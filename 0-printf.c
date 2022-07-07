@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && (format[i + 1] == 0 || format[i + 1] == '%'))
 		{
-			_putchar('%');
+			putchar('%');
 			i++;
 			charCount++;
 		}
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			charCount += 1;
-			_putchar(format[i]);
+			putchar(format[i]);
 		}
 	}
 	va_end(list);
@@ -58,7 +58,7 @@ int percent_case(va_list list, char c)
 		}
 		j++;
 	}
-	_putchar('%');
-	_putchar(c);
+	putchar('%');
+	putchar(c);
 	return (2);
 }

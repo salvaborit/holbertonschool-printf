@@ -6,7 +6,7 @@
  */
 int print_char(va_list list)
 {
-	_putchar(va_arg(list, int));
+	putchar(va_arg(list, int));
 	return (1);
 }
 /**
@@ -23,11 +23,11 @@ int print_str(va_list list)
 	if (str == NULL)
 	{
 		for (i = 0; null[i]; i++)
-			_putchar(null[i]);
+			putchar(null[i]);
 	}
 	else
 		for (i = 0; str[i]; i++)
-			_putchar(str[i]);
+			putchar(str[i]);
 	return (i);
 }
 /**
