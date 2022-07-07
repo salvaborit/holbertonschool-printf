@@ -37,7 +37,8 @@ int print_str(va_list list)
 */
 int print_dec(va_list list)
 {
-	int n, intLen, m, d, x;
+	unsigned int intLen, m, d, x, z;
+	int n;
 
 	n = va_arg(list, int);
 	m = n;
@@ -45,10 +46,11 @@ int print_dec(va_list list)
 	{
 		m /= 10;
 	}
-	for (d = intLen, x = 1; d >= 0; d++, x++)
+	for (d = 0, x = 1; d < intLen; d++, x++)
 	{
 		m = n;
-		putchar(m / (10*(intLen - x)) % 10);
+		z = pow(10, intLen - x);
+		putchar((m / z) % 10);
 	}
 	return (intLen);
 }
