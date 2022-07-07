@@ -30,3 +30,19 @@ int print_str(va_list list)
 			_putchar(str[i]);
 	return (i);
 }
+/**
+ * print_decimal - Function.
+ * @list: Element of type va_list.
+ * Return: Result the va_list.
+ */
+int print_decimal(va_list list)
+{
+}
+/**
+ * print_integer - Function.
+ * @list: Element of type va_list.
+ * Return: Result the va_list.
+ */
+int print_integer(va_list list)
+{
+}

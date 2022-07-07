@@ -1,6 +1,14 @@
 .TH "06-07-2022" LINUX
+
 .SH NAME
+_printf \- The "_printf" function mirrors the functionalities of the printf function, which is found in the C static library.
 .SH SYNOPSIS
+.B #include "main.h"
+.PP
+.B _printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf function mirrors the functionalities of the printf function, which is found in the C
 .SH OPTIONS
+%c %s %% %d %i
 .SH AUTHOR
 Writen by Lautaro Illa and Salvador Borit.

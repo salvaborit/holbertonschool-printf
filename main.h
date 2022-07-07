@@ -25,4 +25,6 @@ int print_str(va_list list);
 
 int _putchar(char c);
 
+int print_decimal(va_list list);
+int print_integer(va_list list);
 #endif
