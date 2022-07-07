@@ -37,13 +37,29 @@ int print_str(va_list list)
 */
 int print_dec(va_list list)
 {
-	int i, n;
+	int intLen, i, n, m;
+	int *arr;
 
 	n = va_arg(list, int);
-	putchar(atoi(n));
-	for (i = 0; n != 0; i++)
+	m = n;
+	for (intLen = 0; m != 0; intLen++)
+		m /= 10;
+	arr = malloc(sizeof(int) * intLen + 1);
+	if (!arr)
+	{
+		return (0);
+	}
+	for (i = intLen - 1; i >= 0; i--)
+	{
+		arr[i] = n % 10;
 		n /= 10;
-	return (i);
+	}
+	arr[intLen] = '\0';
+	for (i = 0; i < intLen; i++)
+	{
+		putchar(arr[i]);
+	}
+	return (intLen);
 }
 /**
 int print_integer(va_list list)
