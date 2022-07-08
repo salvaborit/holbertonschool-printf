@@ -62,12 +62,15 @@ int print_dec(va_list list)
 	print_digit(n);
 	return (count);
 }
+/**
+* print_digit - prints multi digit unsigned ints
+* @n: unsigned multi digit int to print
+*/
 void print_digit(int n)
 {
 	if (n > 0)
 	{
-	print_digit(n / 10);
-	putchar((n % 10) + '0');
+		print_digit(n / 10);
+		putchar((n % 10) + '0');
 	}
-	return;
 }
