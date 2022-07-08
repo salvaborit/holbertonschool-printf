@@ -50,6 +50,8 @@ int print_dec(va_list list)
 	{
 	while (n1 > 9)
 	{
+	n2 /= 10;
+	n2 *= 10;
 	}
 	while (n1 >= 1)
 	{
@@ -57,3 +59,4 @@ int print_dec(va_list list)
 	}
 	}
 	return (count);
+}
