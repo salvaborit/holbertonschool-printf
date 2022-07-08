@@ -67,11 +67,11 @@ int print_dec(va_list list)
 * @n: unsigned multi digit int to print.
 * Return: int.
 */
-int print_digit(int n)
+void print_digit(int n)
 {
 	if (n / 10 != 0)
 	{
 		print_digit(n / 10);
 	}
-	return (putchar((n % 10) + '0'));
+	putchar((n % 10) + '0');
 }
