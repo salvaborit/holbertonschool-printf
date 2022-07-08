@@ -60,5 +60,6 @@ int print_digit(unsigned int n)
 	{
 		c = print_digit(n / 10);
 	}
-	return (putchar((n % 10) + '0') + c);
+	putchar((n % 10) + '0');
+	return (1 + c);
 }
