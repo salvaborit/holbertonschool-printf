@@ -44,7 +44,7 @@ int print_dec(va_list list)
 	if (n < 0)
 	{
 		putchar('-');
-		print_digit(n);
+		n = -n;
 		count++;
 	}
 	if (n >= 0 && n <= 9)
