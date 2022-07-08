@@ -38,7 +38,7 @@ int print_str(va_list list)
 int print_dec(va_list list)
 {
 	unsigned int count = 0;
-	int n;
+	int n, n2;
 
 	n = va_arg(list, int);
 	if (n < 0)
@@ -54,12 +54,20 @@ int print_dec(va_list list)
 	}
 	else
 	{
+		for (n2 = n; n2 != 0; count++)
+		{
+			n2 /= 10;
+		}
+	}
 	print_digit(n);
-	}
-	}
 	return (count);
 }
-int print_digit(int n)
+void print_digit(int n)
 {
-
+	if (n > 0)
+	{
+	print_digit(n / 10);
+	putchar((n % 10) + '0');
+	}
+	return;
 }

@@ -22,8 +22,7 @@ int percent_case(va_list list, char c);
 
 int print_char(va_list list);
 int print_str(va_list list);
-int print_dec(int n1);
+int print_dec(va_list list);
 
-int _pow(int x, int y);
-
+void print_digit(int n);
 #endif
