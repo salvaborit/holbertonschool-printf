@@ -47,11 +47,12 @@ int print_dec(va_list list)
 		n = -n;
 		count++;
 	}
-	if (n >= 0 && n <= 9)
-	{
-		putchar((n % 10) + '0');
-		count++;
-	}
+/**	if (n >= 0 && n <= 9)
+*	{
+*		putchar((n % 10) + '0');
+*		count++;
+*	}
+*/
 	else
 	{
 		for (n2 = n; n2 != 0; count++)
