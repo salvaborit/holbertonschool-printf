@@ -37,36 +37,23 @@ int print_str(va_list list)
 */
 int print_dec(va_list list)
 {
-	unsigned int intLen, m, d, x, z;
-	int n;
+	unsigned int count = 0;
+	int n1, n2;
 
-	n = va_arg(list, int);
-	m = n;
-	for (intLen = 0; m != 0; intLen++)
+	n1 = va_arg(list, int);
+	if (n1 < 0)
 	{
-		m /= 10;
+		count += putchar('-');
+		n2 = -n1;
 	}
-	for (d = 0, x = 1; d < intLen; d++, x++)
+	else
 	{
-		m = n;
-		z = _pow(10, intLen - x);
-		putchar((m / z) % 10);
+	while (n1 > 9)
+	{
 	}
-	return (intLen);
-}
-/**
-* 
-*
-*/
-int _pow(int x, int y)
-{
-	if (y < 0)
-		return (-1);
-	else if (x == 0)
-		return (0);
-	else if (x == 1)
-		return (1);
-	else if (y > 0)
-		return (x * _pow(x, y - 1));
-	return (1);
-}
+	while (n1 >= 1)
+	{
+	count += putchar((n2 % 10) + '0');
+	}
+	}
+	return (count);
