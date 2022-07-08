@@ -24,5 +24,5 @@ int print_char(va_list list);
 int print_str(va_list list);
 int print_dec(va_list list);
 
-void print_digit(int n);
+int print_digit(unsigned int n);
 #endif

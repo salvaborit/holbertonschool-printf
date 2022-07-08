@@ -37,41 +37,28 @@ int print_str(va_list list)
 */
 int print_dec(va_list list)
 {
-	unsigned int count = 0;
-	int n, n2;
+	int n;
 
 	n = va_arg(list, int);
 	if (n < 0)
 	{
 		putchar('-');
-		n = -n;
-		count++;
+		return (print_digit(-n) + 1);
 	}
-	if (n >= 0 && n <= 9)
-	{
-		putchar((n % 10) + '0');
-		count++;
-	}
-	else
-	{
-		print_digit(n);
-		for (n2 = n; n2 != 0; count++)
-		{
-			n2 /= 10;
-		}
-	}
-	return (count);
+	return (print_digit(n));
 }
 /**
 * print_digit - prints multi digit unsigned ints
 * @n: unsigned multi digit int to print.
 * Return: int.
 */
-void print_digit(int n)
+int print_digit(unsigned int n)
 {
+	int c = 0;
+
 	if (n / 10 != 0)
 	{
-		print_digit(n / 10);
+		c = print_digit(n / 10);
 	}
-	putchar((n % 10) + '0');
+	return (putchar((n % 10) + '0') + c);
 }
