@@ -38,25 +38,28 @@ int print_str(va_list list)
 int print_dec(va_list list)
 {
 	unsigned int count = 0;
-	int n1, n2;
+	int n;
 
-	n1 = va_arg(list, int);
-	if (n1 < 0)
+	n = va_arg(list, int);
+	if (n < 0)
 	{
-		count += putchar('-');
-		n2 = -n1;
+		putchar('-');
+		n = -n;
+		count++;
+	}
+	if (n >= 0 && n <= 9)
+	{
+		putchar((n % 10) + '0');
+		count++;
 	}
 	else
 	{
-	while (n1 > 9)
-	{
-	n2 /= 10;
-	n2 *= 10;
-	}
-	while (n1 >= 1)
-	{
-	count += putchar((n2 % 10) + '0');
+	print_digit(n);
 	}
 	}
 	return (count);
+}
+int print_digit(int n)
+{
+
 }
