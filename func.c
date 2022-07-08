@@ -43,9 +43,8 @@ int print_dec(va_list list)
 	n = va_arg(list, int);
 	if (n < 0)
 	{
-		putchar('-');
+		count += putchar('-');
 		n = -n;
-		count++;
 	}
 	if (n >= 0 && n <= 9)
 	{
