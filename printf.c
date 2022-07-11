@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
-			charCount += percent_case(list, format[i + 1]);
+			charCount += map_func(list, format[i + 1]);
 			i++;
 		}
 		else
@@ -53,7 +53,7 @@ int map_func(va_list list, char c)
 	};
 	for (j = 0; j < 4; j++)
 		if (*f[j].let == c)
-			return (f[j].f(list));
+			return (f[j].func(list));
 	putchar('%');
 	putchar(c);
 	return (2);

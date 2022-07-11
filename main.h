@@ -14,7 +14,7 @@
 typedef struct format
 {
 	char *let;
-	int (*f)(va_list list);
+	int (*func)(va_list list);
 } format_t;
 
 int _printf(const char *format, ...);
