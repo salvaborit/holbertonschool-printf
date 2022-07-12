@@ -48,8 +48,8 @@ int map_func(va_list ap, char c)
 	format_t f[] = {
 		{"c", print_char},
 		{"s", print_str},
-		{"d", print_dec},
-		{"i", print_dec}
+		{"d", print_int},
+		{"i", print_int}
 	};
 	for (j = 0; j < 4; j++)
 		if (*f[j].let == c)
