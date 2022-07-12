@@ -22,5 +22,7 @@ I get up every day at 6 in the morning and go to work.
 |  %  |  Followed by a %, prints another %  |
 |  d  |  Print a decimal (base 10) number  |
 |  i  |  Print an integer  |
+
+# Function flowcharts
 ![_printf - sb_ll-_printf drawio](https://user-images.githubusercontent.com/105693785/178490677-1af52459-6db4-4f9d-a0a7-74b83e275210.png)
 ![_printf - sb_ll-map_func drawio](https://user-images.githubusercontent.com/105693785/178490694-98fe8cb2-16a8-4ff6-b2d1-1fefaf2f380b.png)
