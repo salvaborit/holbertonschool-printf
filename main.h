@@ -18,11 +18,11 @@ typedef struct format
 } format_t;
 
 int _printf(const char *format, ...);
-int map_func(va_list, char);
+int map_func(va_list ap, char c);
 
-int print_char(va_list);
-int print_str(va_list);
-int print_int(va_list);
+int print_char(va_list ap);
+int print_str(va_list ap);
+int print_int(va_list ap);
 
 int print_unsigned_int(unsigned int n);
 
