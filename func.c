@@ -21,10 +21,8 @@ int print_str(va_list ap)
 
 	str = va_arg(ap, char *);
 	if (str == NULL)
-	{
 		for (i = 0; null[i]; i++)
 			putchar(null[i]);
-	}
 	else
 		for (i = 0; str[i]; i++)
 			putchar(str[i]);
@@ -50,7 +48,7 @@ int print_int(va_list ap)
 /**
 * print_unsigned_int - prints unsigned ints
 * @n: unsigned int to print
-* Return: int
+* Return: adds 1 in each recursion, adding up to the number of digits printed
 */
 int print_unsigned_int(unsigned int n)
 {
