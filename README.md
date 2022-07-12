@@ -20,5 +20,5 @@ I get up every day at 6 in the morning and go to work.
 |  c  |  Character  |
 |  s  | String of character  |
 |  %  |  Followed by a %, prints another %  |
-|  d  |  Decimal  |
-|  i  |  Integer  |
+|  d  |  Print a decimal (base 10) number  |
+|  i  |  Print an integer  |
