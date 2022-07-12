@@ -22,8 +22,8 @@ The int argument is converted to signed decimal notation (base 10).
 .BR %i:
 The int argument is converted to signed decimal notation (base 10).
 .PP
-.BR %:
-It prints a "%", followed by another "%".
+.BR %%:
+Prints a "%".
 .SH RETURN VALUE
 If the _printf() function works, it will return the number of characters printed (excluding the null byte).
 .PP
