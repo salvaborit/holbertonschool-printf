@@ -10,9 +10,9 @@ int _printf(const char *format, ...);
 ```
 # Example
 ##### #include "main.h"
-_printf("I get up every day at %d in the morning and go to %s"., 6, "work");
+_printf("I get up every day at %d in the morning and go to %s", 6, "work");
 
-Print this:
+Prints this:
 I get up every day at 6 in the morning and go to work.
 
 # Specifiers characteres:
